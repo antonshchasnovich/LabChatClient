@@ -1,0 +1,10 @@
+package message;
+
+public enum MessageType {
+	SERVER_MESSAGE,
+	TEXT_MESSAGE,
+	AGENT_REG_MESSAGE,
+	CLIENT_REG_MESSAGE,
+	LEAVE_MESSAGE,
+
+}
