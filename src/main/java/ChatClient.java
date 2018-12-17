@@ -22,14 +22,14 @@ public class ChatClient {
             name = RegMessage.substring(16, RegMessage.length());
             type = MessageType.AGENT_REG_MESSAGE;
             endpoint = new ChatClientEndpoint(new URI("ws://localhost:8080/Chat/chat"));
-            endpoint.sendMessage(new Message(name, text, type));
+            endpoint.sendMessage(new Message(name, text, type,1));
             type = MessageType.TEXT_MESSAGE;
         }
         else if(RegMessage.startsWith("/register client ")){
             name = RegMessage.substring(17, RegMessage.length());
             type = MessageType.CLIENT_REG_MESSAGE;
             endpoint = new ChatClientEndpoint(new URI("ws://localhost:8080/Chat/chat"));
-            endpoint.sendMessage(new Message(name, text, type));
+            endpoint.sendMessage(new Message(name, text, type,1));
             type = MessageType.TEXT_MESSAGE;
         }
         else if(RegMessage.equals("/exit")){
