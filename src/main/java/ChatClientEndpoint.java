@@ -2,7 +2,16 @@ import coders.MessageDecoder;
 import coders.MessageEncoder;
 import message.Message;
 
-import javax.websocket.*;
+
+import javax.websocket.ClientEndpoint;
+import javax.websocket.CloseReason;
+import javax.websocket.ContainerProvider;
+import javax.websocket.EncodeException;
+import javax.websocket.OnClose;
+import javax.websocket.OnMessage;
+import javax.websocket.OnOpen;
+import javax.websocket.Session;
+import javax.websocket.WebSocketContainer;
 import java.io.IOException;
 import java.net.URI;
 
@@ -45,11 +54,4 @@ public class ChatClientEndpoint {
         this.userSession.getBasicRemote().sendObject(message);
     }
 
-    public Session getUserSession() {
-        return userSession;
-    }
-
-    public void setMessage(Message message) {
-        this.message = message;
-    }
 }
