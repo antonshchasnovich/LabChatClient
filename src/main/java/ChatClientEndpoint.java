@@ -20,7 +20,7 @@ public class ChatClientEndpoint {
     private Session userSession;
     private Message message;
 
-    public ChatClientEndpoint(URI endpointURI) {
+    ChatClientEndpoint(URI endpointURI) {
         try {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
             container.connectToServer(this, endpointURI);
@@ -49,7 +49,7 @@ public class ChatClientEndpoint {
     }
 
 
-    public void sendMessage(Message message) throws IOException, EncodeException {
+    void sendMessage(Message message) throws IOException, EncodeException {
         this.message = message;
         this.userSession.getBasicRemote().sendObject(message);
     }
