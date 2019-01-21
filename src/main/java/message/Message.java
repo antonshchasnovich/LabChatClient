@@ -11,20 +11,17 @@ public class Message {
     private String name;
     private String text;
     private MessageType type;
-    private int index;
+    private int index = 0;
 
 
     public Message(String name, String text, MessageType type) {
         this.name = name;
         this.text = text;
         this.type = type;
-        this.index = 0;
     }
 
     public Message(String name, String text, MessageType type, int index) {
-        this.name = name;
-        this.text = text;
-        this.type = type;
+        this(name, text, type);
         this.index = index;
     }
 
@@ -34,10 +31,6 @@ public class Message {
 
     public String getText() {
         return text;
-    }
-
-    public MessageType getType() {
-        return type;
     }
 
     @Override
@@ -54,17 +47,5 @@ public class Message {
     public int hashCode() {
 
         return Objects.hash(name, text, type);
-    }
-
-    public void setType(MessageType type) {
-        this.type = type;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
     }
 }
