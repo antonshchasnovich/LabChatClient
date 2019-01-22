@@ -43,7 +43,7 @@ public class ChatClientEndpoint {
 
     @OnMessage
     public void onMessage(Session session, Message message) {
-        if(!message.equals(this.message)){
+        if(!message.getName().equals(this.message.getName())){
             System.out.println(message.getName() + ": " + message.getText());
         }
     }
